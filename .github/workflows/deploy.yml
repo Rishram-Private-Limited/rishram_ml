@@ -1,0 +1,35 @@
+name: Deploy FastAPI to EC2
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: [self-hosted]  # Use your self-hosted runner on EC2
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy with Docker Compose
+      run: |
+        cd ~/RishRam-Vocabulary
+        git pull origin main
+    
+        # Create .env securely
+        echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}" > .env
+        echo "SERP_API_KEY=${{ secrets.SERP_API_KEY }}" >> .env
+    
+        # Cleanup old containers/images
+        docker compose down || true
+        docker image prune -f
+    
+        # Build with cache optimization
+        docker compose build --parallel
+    
+        # Start with resource limits
+        docker compose up -d --remove-orphans
+    
+
