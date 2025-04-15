@@ -12,6 +12,7 @@ def ai_text_detector(paragraph):
     doc = nlp(paragraph)
     sentences = [sent.text for sent in doc.sents]
    
+    # Initialize the Gemini model
     model = genai.GenerativeModel('models/gemini-1.5-pro')
     
     results = []
