@@ -23,9 +23,11 @@ jobs:
     
         if [ ! -d .git ]; then
           git clone https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git .
+        else
+          git reset --hard
+          git clean -fd
+          git pull origin main
         fi
-    
-        git pull https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git main
 
         # Create .env securely
         echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}" > .env
