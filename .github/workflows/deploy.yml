@@ -22,11 +22,11 @@ jobs:
         cd ~/RishRam-Vocabulary
     
         if [ ! -d .git ]; then
-          git clone https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git .
+          git clone https://x-access-token:${PAT_TOKEN}@github.com/${REPO}.git .
         else
           git reset --hard
           git clean -fd
-          git pull origin main
+          git pull git pull https://x-access-token:${PAT_TOKEN}@github.com/${REPO}.git main
         fi
 
         # Create .env securely
