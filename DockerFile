@@ -1,4 +1,3 @@
-# Use Alpine for smaller image (ensure compatibility with your dependencies)
 FROM python:3.10-alpine
 
 WORKDIR /app
