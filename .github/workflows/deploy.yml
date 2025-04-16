@@ -24,9 +24,8 @@ jobs:
         if [ ! -d .git ]; then
           git clone https://x-access-token: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@github.com/${REPO}.git .
         else
-          git reset --hard
-          git clean -fd
-          git pull https://x-access-token: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@github.com/${REPO}.git main
+          git fetch origin
+          git reset --hard origin/main
         fi
 
         # Create .env securely
