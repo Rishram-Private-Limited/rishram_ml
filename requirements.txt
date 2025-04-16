@@ -14,8 +14,9 @@ google-generativeai
 python-dotenv
 
 # Machine Learning Utilities
-numpy
-scikit-learn
+scikit-learn==1.4.2  # Last version with partial Alpine compatibility
+numpy==1.26.4
+scipy==1.13.0
 sentencepiece
 
 fastapi
