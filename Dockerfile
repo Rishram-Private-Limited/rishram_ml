@@ -1,21 +1,14 @@
-FROM python:3.10-alpine
+FROM python:3.10-slim
 
 WORKDIR /app
 
-# Install build dependencies
-RUN apk add --no-cache \
-    build-base \
-    g++ \
-    make \
-    openblas-dev \
-    lapack-dev \
-    libstdc++
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Remove build tools (keep OpenBLAS)
-RUN apk del build-base g++ make
 
 COPY . .
 

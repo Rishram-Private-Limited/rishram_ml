@@ -33,14 +33,9 @@ jobs:
         echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}" > .env
         echo "SERP_API_KEY=${{ secrets.SERP_API_KEY }}" >> .env
     
-        # Cleanup old containers/images
         docker compose down || true
         docker image prune -f
-    
-        # Build with cache optimization
-        docker compose build --parallel
-    
-        # Start with resource limits
+        docker compose build
         docker compose up -d --remove-orphans
     
 
