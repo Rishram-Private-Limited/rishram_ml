@@ -1,4 +1,33 @@
-fastapi==0.110.0
+INFO: pip is looking at multiple versions of fastapi to determine which version is compatible with other requirements. This could take a while.
+#10 7.052 ERROR: Cannot install -r requirements.txt (line 7) and -r requirements.txt (line 8) because these package versions have conflicting dependencies.
+#10 7.053 
+#10 7.053 The conflict is caused by:
+#10 7.053     langchain 0.1.14 depends on langchain-core<0.2.0 and >=0.1.37
+#10 7.053     langchain-google-genai 1.0.10 depends on langchain-core<0.3 and >=0.2.33
+#10 7.053 
+#10 7.053 To fix this you could try to:
+#10 7.053 1. loosen the range of package versions you've specified
+#10 7.053 2. remove package versions to allow pip attempt to solve the dependency conflict
+#10 7.053 
+#10 7.053 ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+#10 7.146 
+#10 7.146 [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+#10 7.146 [notice] To update, run: pip install --upgrade pip
+#10 ERROR: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1
+------
+ > [5/7] RUN pip install --no-cache-dir -r requirements.txt:
+7.053     langchain-google-genai 1.0.10 depends on langchain-core<0.3 and >=0.2.33
+7.053 
+7.053 To fix this you could try to:
+7.053 1. loosen the range of package versions you've specified
+7.053 2. remove package versions to allow pip attempt to solve the dependency conflict
+7.053 
+7.053 ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+7.146 
+Notice: 7.146 [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+Notice: 7.146 [notice] To update, run: pip install --upgrade pip
+------
+Dockerfile:12fastapi==0.110.0
 uvicorn[standard]==0.27.0
 spacy==3.7.4
 sentencepiece==0.2.0
