@@ -7,7 +7,7 @@ python-dotenv==1.0.0
 # Only include if you're actually using them in the code
 langchain==0.1.14
 langchain-google-genai==1.0.10
-google-generativeai==0.3.3
+google-generativeai==0.8.5 
 
 # REMOVE these if not required to reduce memory
 # transformers==4.38.2
