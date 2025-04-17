@@ -6,7 +6,7 @@ python-dotenv==1.0.0
 
 # Modern LLM stack (April 2025 compatible)
 langchain==0.2.6
-langchain-google-genai==1.1.0  # Last stable version
+langchain-google-genai==1.0.1  # Last stable version
 google-genai==1.1.0      # Drops ai-generativelanguage dependency
 
 
