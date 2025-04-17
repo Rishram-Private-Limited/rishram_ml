@@ -5,9 +5,9 @@ sentencepiece==0.2.0
 python-dotenv==1.0.0
 
 # Core LLM stack (version-locked)
-langchain==0.1.14
-langchain-google-genai==0.0.14  # Compatible with older langchain-core
-google-generativeai==0.3.3  # Matches langchain-google-genai 0.0.14
+langchain>=0.2.0
+langchain-google-genai>=2.1.2  # Latest as of April 2025
+google-generativeai>=0.7.0 # Matches langchain-google-genai 0.0.14
 
 
 # REMOVE these if not required to reduce memory
