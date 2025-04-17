@@ -1,14 +1,14 @@
-langchain>=0.3.20,<1.0.0
-langchain-core>=0.3.41,<1.0.0
-langsmith>=0.1.125,<0.4
-langchain-google-genai
-google-generativeai
-python-dotenv
-scikit-learn==1.4.2
-numpy==1.26.4
-scipy==1.13.0
-sentencepiece
-fastapi
-uvicorn
-transformers
-spacy
+fastapi==0.110.0
+uvicorn[standard]==0.27.0
+spacy==3.7.4
+sentencepiece==0.2.0
+python-dotenv==1.0.0
+
+# Only include if you're actually using them in the code
+langchain==0.1.14
+langchain-google-genai==0.0.14
+google-generativeai==0.3.3
+
+# REMOVE these if not required to reduce memory
+# transformers==4.38.2
+# numpy==1.26.4

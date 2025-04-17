@@ -1,13 +1,19 @@
+version: '3.8'
 
 services:
   fastapi:
-    build: 
-      context: .
-      dockerfile: ./Dockerfile
+    image: yourdockerusername/rishram-vocabulary:latest
+    container_name: rishram-app
     ports:
       - "8000:8000"
     env_file:
       - .env
-    restart: unless-stopped  # More sensible restart policy
-    mem_limit: 400m  # Hard memory limit
-    cpus: 0.5
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: '512M'
+        reservations:
+          cpus: '0.25'
+          memory: '256M'
