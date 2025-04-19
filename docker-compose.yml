@@ -1,8 +1,7 @@
-version: '3.8'
 
 services:
   fastapi:
-    image: ${DOCKER_USERNAME}/rishram-ml:${TAG:-latest}
+    image: ${DOCKER_USERNAME}/rishram-ml:${TAG}
     container_name: rishram-ML
     ports:
       - "8000:8000"
