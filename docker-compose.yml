@@ -2,13 +2,12 @@ version: '3.8'
 
 services:
   fastapi:
-    image: yourdockerusername/rishram-vocabulary:latest
-    container_name: rishram-app
+    image: ${DOCKER_USERNAME}/rishramML:${TAG:-latest}
+    container_name: rishram-ML
     ports:
       - "8000:8000"
-    env_file:
-      - .env
-    restart: unless-stopped
+    environment:
+      GEMINI_API_KEY=${GEMINI_API_KEY}
     deploy:
       resources:
         limits:
