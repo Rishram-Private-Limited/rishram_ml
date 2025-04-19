@@ -30,6 +30,7 @@ Rewrite the following text to maintain its meaning while:
 - Adding natural human inconsistencies in style
 - Incorporating occasional informality where appropriate
 - Varying vocabulary choices
+- Avoiding repetitive phrases or structures
 
 Original Text:
 {text}
