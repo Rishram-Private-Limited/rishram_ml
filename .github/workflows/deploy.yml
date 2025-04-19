@@ -22,8 +22,8 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/rishramML:${{ github.sha }} .
-          docker push ${{ secrets.DOCKER_USERNAME }}/rishramML:${{ github.sha }}
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/rishram-ml:${{ github.sha }} .
+          docker push ${{ secrets.DOCKER_USERNAME }}/rishram-ml:${{ github.sha }}
         env:
           TAG: ${{ github.sha }}
 
