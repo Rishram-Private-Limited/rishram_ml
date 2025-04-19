@@ -33,7 +33,7 @@ jobs:
 
   deploy:
     name: Deploy on EC2
-    runs-on: [self-hosted]  # Assumes you have a self-hosted runner on EC2
+    runs-on: [self-hosted]  
     needs: build-and-push
 
     steps:
